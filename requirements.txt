@@ -1,2 +1,2 @@
-langchain==0.0.190
+langchain==0.0.220
 chainlit==0.2.109
