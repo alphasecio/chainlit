@@ -1,4 +1,4 @@
 langchain==0.2.15
 langchain-community==0.2.15
-langchain-openai==0.1.23
+langchain-openai==0.2.1
 chainlit==1.1.402
