@@ -7,6 +7,30 @@ from langchain.schema.runnable.config import RunnableConfig
 
 openai_api_key = os.environ["OPENAI_API_KEY"]
 
+@cl.set_starters
+async def set_starters():
+    return [
+        cl.Starter(
+            label="Weekend getaway ideas",
+            message="I'm looking for a weekend getaway within 3 hours of my city. Can you suggest unique destinations, and maybe ask about my interests to personalize it?",
+        ),
+
+        cl.Starter(
+            label="Solo travel itinerary",
+            message="Help me build a safe and fun 5-day solo travel itinerary in Japan. Ask me about my preferences like food, culture, or adventure.",
+        ),
+
+        cl.Starter(
+            label="Best time to visit Europe",
+            message="What’s the best time to visit Europe based on fewer crowds, good weather, and local festivals?",
+        ),
+
+        cl.Starter(
+            label="Packing checklist",
+            message="Can you generate a packing checklist for a two-week trip to Thailand during the rainy season? Consider clothes, meds, and electronics.",
+        ),
+    ]
+
 @cl.on_chat_start
 async def on_chat_start():
     model = ChatOpenAI(streaming=True)
